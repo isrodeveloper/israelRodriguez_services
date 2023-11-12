@@ -1,0 +1,20 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Ticket {
+  id: Int!
+  message: String!
+}
+
+type Query {
+  ticket: [Ticket!]!
+}
+
+type Mutation {
+  createTicket(ticketInput: CreateTicketDto!): Ticket!
+}
+
+input CreateTicketDto {
+  message: String!
+}

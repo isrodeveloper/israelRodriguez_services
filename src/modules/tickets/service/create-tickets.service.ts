@@ -9,20 +9,17 @@ import { InjectRepository } from '@nestjs/typeorm';
 @Injectable()
 export class CreateTicketsService {
     constructor(@InjectRepository(Ticket) private readonly ticketRepository: Repository<Ticket>){}
+ 
+    createTicket({message} : CreateTicketDto){
+        const ticket = this.ticketRepository.create({message})
+        return this.ticketRepository.save(ticket)
+     }
 
-    private tickets: Ticket []=[
-        {
-            id:1,
-            message:"dsd"
-        },
-    
-    ];
-    
-    async getTickets({limit, offset}: PaginationQueryDto): Promise<Ticket[]>{
-        return await this.ticketRepository.find({skip: offset, take:limit});
+    async getTicketAll(): Promise<Ticket[]>{
+        return await this.ticketRepository.find();
     } 
 
-    async getTicket(id:number): Promise<Ticket>{
+    async getTicketId(id:number): Promise<Ticket>{
         const ticket:Ticket = await this.ticketRepository.findOneBy({id: id});
 
         if(!ticket){
@@ -30,32 +27,15 @@ export class CreateTicketsService {
         }
         return ticket;
     }
-
-    creatrTicket({message} : CreateTicketDto){
-       const ticket = this.ticketRepository.create({message})
-       return this.ticketRepository.save(ticket)
-    }
-
-    async updateTicket(id: number, {message} : CreateTicketDto){
+    /*async updateTicket(id: number, {message} : CreateTicketDto){
         const ticket : Ticket = await this.ticketRepository.preload({
             id,message
         })
-
         if(!ticket){
             throw new NotFoundException("No encontrado")
         }
     
         return ticket;
-    }
-
-    @Delete(':id')
-    async removeTicket(id : number): Promise<void> {
-        const ticket : Ticket = await this.ticketRepository.findOneBy({id: id})
-        if(!ticket){
-            throw new NotFoundException("No encontrado")
-        }
-        this.ticketRepository.remove(ticket)
-    }
-
+    }*/
 }
 

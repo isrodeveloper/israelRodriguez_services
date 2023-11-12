@@ -15,6 +15,7 @@ export const DatabaseProvider: DynamicModule = TypeOrmModule.forRootAsync({
                 username:'admin',
                 password : 'my-weak-password',
                 database:'postgres',
+                entities: [__dirname+'/**/*.entity{.ts,.js}'],
                 autoLoadEntities:true,
                 synchronize:true
             } as ConnectionOptions;
