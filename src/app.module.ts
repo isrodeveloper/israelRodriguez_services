@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 
-import { TicketsModule } from './modules/tickets/model/tickets.module';
+import { TicketsModule } from './modules/tickets/Model/tickets.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService} from '@nestjs/config';
 import { DatabaseModule } from './database/database.module';

@@ -1,7 +1,7 @@
 import { Delete, Injectable, NotFoundException } from '@nestjs/common';
 import { Repository} from 'typeorm';
 
-import { Ticket } from '../model/ticket.entity';
+import { Ticket } from '../Model/ticket.entity';
 import { NotFoundError } from 'rxjs';
 import { CreateTicketDto, PaginationQueryDto } from '../../../common';
 import { InjectRepository } from '@nestjs/typeorm';
