@@ -22,5 +22,13 @@ export class CreateTicketsController {
     getTicketId(@Param('id')id:number):Promise<Ticket>{
         return this.ticketService.getTicketId(id);
     }
+    /*
+    @Patch(':id')
+    updateTicket(@Param('id')id:number, @Body() ticket:UpdateTicketDto):Promise<Ticket>{
+        return this.ticketService.updateTicket(id, ticket);
+    @Get()
+    getTicketAll(): Promise<Ticket[]>{  
+        return this.ticketService.getTicketAll();
+    }*/
 }
     

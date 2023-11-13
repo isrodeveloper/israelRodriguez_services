@@ -4,7 +4,11 @@
 
 type Ticket {
   id: Int!
-  message: String!
+  tittle: String!
+  description: String!
+  priority: String!
+  category: String!
+  status: String!
 }
 
 type Query {
@@ -16,5 +20,9 @@ type Mutation {
 }
 
 input CreateTicketDto {
-  message: String!
+  tittle: String!
+  description: String!
+  priority: String!
+  category: String!
+  status: String!
 }

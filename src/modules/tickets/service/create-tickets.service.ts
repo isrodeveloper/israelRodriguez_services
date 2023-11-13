@@ -10,8 +10,8 @@ import { InjectRepository } from '@nestjs/typeorm';
 export class CreateTicketsService {
     constructor(@InjectRepository(Ticket) private readonly ticketRepository: Repository<Ticket>){}
  
-    createTicket({message} : CreateTicketDto){
-        const ticket = this.ticketRepository.create({message})
+    createTicket(message : CreateTicketDto):Promise<Ticket>{
+        const ticket = this.ticketRepository.create(message)
         return this.ticketRepository.save(ticket)
      }
 

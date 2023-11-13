@@ -11,7 +11,7 @@ export class TicketResolver {
 
     @Query((returns) => [Ticket])
     ticket(){
-       return this.ticketService.getTicketsAll();
+       return this.ticketService.getTicketAll();
     }
 
     @Mutation(returns => Ticket)

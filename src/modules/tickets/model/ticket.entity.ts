@@ -10,5 +10,21 @@ export class Ticket{
 
     @Column()
     @Field()
-    message: string;
+    tittle: string;
+
+    @Column()
+    @Field()
+    description: string;
+
+    @Column()
+    @Field()
+    priority: string;
+
+    @Column()
+    @Field()
+    category: string;
+
+    @Column()
+    @Field()
+    status: string;
 }
