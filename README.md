@@ -1,14 +1,14 @@
 # israelRodriguez_services
 
 # La siguiente aplicación consta de las siguientes funcionalidades:
-consutar ticket por id
-consutar todos los tickets
+consutar ticket por id,
+consutar todos los tickets,
 crear ticket
 
 # tecnologias/patrones usados
-Nestjs
-Repository
-Graphql
+Nestjs,
+Repository,
+Graphql,
 
 #Se puede levantar todo el proyecto ejecutando el archivo docker-compose.yml que se encuenta en: https://github.com/isrodeveloper/israelRodriguez_services.git
 dentro de dicho archivo se encuentran las imagenes del proyecto realizado y las imagen de la base de datos.
